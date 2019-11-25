@@ -19,11 +19,11 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate {
         //panGestureRecognizer.delegate = self
     }
 
-    // MARK: - Gestures
-    
     override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
         UIRectEdge.all
     }
+
+    // MARK: - UIGestureRecognizerDelegate
 
     /*
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
