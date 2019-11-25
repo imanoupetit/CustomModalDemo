@@ -66,20 +66,18 @@ class PanTransitionController: UIPercentDrivenInteractiveTransition {
         // Return an appropriate percentage from gesture's translationInView
         let translation = gesture.translation(in: view)
 
-        let percentage: CGFloat
         switch targetEdge {
         case .top:
-            percentage  = (1 - translation.y) / view.bounds.height
+            return (1 - translation.y) / view.bounds.height
         case .bottom:
-            percentage  = translation.y / view.bounds.height
+            return translation.y / view.bounds.height
         case .left:
-            percentage  = (1 - translation.x) / view.bounds.width
+            return (1 - translation.x) / view.bounds.width
         case .right:
-            percentage  = translation.x / view.bounds.width
+            return translation.x / view.bounds.width
         default:
-            fatalError()
+            return 0
         }
-        return percentage
     }
     
 }

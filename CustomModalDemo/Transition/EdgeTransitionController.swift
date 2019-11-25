@@ -69,11 +69,16 @@ class EdgeTransitionController: UIPercentDrivenInteractiveTransition {
         
         // Return an appropriate percentage based on which edge we're dragging from
         switch gestureRecognizer.edges {
-        case UIRectEdge.right:  return (width - locationInSourceView.x) / width
-        case UIRectEdge.left:   return locationInSourceView.x / width
-        case UIRectEdge.bottom: return (height - locationInSourceView.y) / height
-        case UIRectEdge.top:    return locationInSourceView.y / height
-        default:                return 0
+        case .right:
+            return (width - locationInSourceView.x) / width
+        case .left:
+            return locationInSourceView.x / width
+        case .bottom:
+            return (height - locationInSourceView.y) / height
+        case .top:
+            return locationInSourceView.y / height
+        default:
+            return 0
         }
     }
     
